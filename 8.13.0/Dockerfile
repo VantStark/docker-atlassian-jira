@@ -14,11 +14,11 @@ RUN set -x \
     && chmod -R 700            "${JIRA_HOME}" \
     && chown -R daemon:daemon  "${JIRA_HOME}" \
     && mkdir -p                "${JIRA_INSTALL}/conf/Catalina" \
-    && curl -Ls                "https://nas.vant.in/mirror/atlassian-jira-software/v${JIRA_VERSION}/atlassian-jira-software-${JIRA_VERSION}.tar.gz" | tar -xz --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner \
-    && curl -Ls                "https://nas.vant.in/mirror/mysql-connector-java/v5.1.38/mysql-connector-java-5.1.38.tar.gz" | tar -xz --directory "${JIRA_INSTALL}/lib" --strip-components=1 --no-same-owner "mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar" \
+    && curl -Ls                "https://xicc.cc:9900/mirror/atlassian-jira-software/v${JIRA_VERSION}/atlassian-jira-software-${JIRA_VERSION}.tar.gz" | tar -xz --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner \
+    && curl -Ls                "https://xicc.cc:9900/mirror/mysql-connector-java/v5.1.38/mysql-connector-java-5.1.38.tar.gz" | tar -xz --directory "${JIRA_INSTALL}/lib" --strip-components=1 --no-same-owner "mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar" \
     && rm -f                   "${JIRA_INSTALL}/lib/postgresql-9.1-903.jdbc4-atlassian-hosted.jar" \
-    && curl -Ls                "https://nas.vant.in/mirror/jdbc-postgresql/v42.2.1/postgresql-42.2.1.jar" -o "${JIRA_INSTALL}/lib/postgresql-42.2.1.jar" \
-    && curl -Ls                "https://nas.vant.in/mirror/atlassian-agent/v1.2.3/atlassian-agent.jar" -o "${JIRA_INSTALL}/atlassian-agent.jar" \
+    && curl -Ls                "https://xicc.cc:9900/mirror/jdbc-postgresql/v42.2.1/postgresql-42.2.1.jar" -o "${JIRA_INSTALL}/lib/postgresql-42.2.1.jar" \
+    && curl -Ls                "https://xicc.cc:9900/mirror/atlassian-agent/v1.2.3/atlassian-agent.jar" -o "${JIRA_INSTALL}/atlassian-agent.jar" \
     && chmod -R 700            "${JIRA_INSTALL}/conf" \
     && chmod -R 700            "${JIRA_INSTALL}/logs" \
     && chmod -R 700            "${JIRA_INSTALL}/temp" \
